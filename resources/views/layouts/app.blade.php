@@ -9,26 +9,41 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
+
     <div class="flex items-center justify-center p-10">
-        <div class="pl-6 pr-6 bg-gray-200 rounded">
-            <nav class="p-6 flex justify-center">
+        <div class="container max-w-3xl">
+            <nav class="bg-gray-800 rounded-t">
+                <div class="relative flex items-center justify-center h-16">
+                    <div class="flex space-x-4">
+                    <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+
+                    <a href="{{ route('contacts') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacts</a>
+
+                    <a href="{{ route('add_contact') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add contact</a>
+                    </div>
+                </div>
+            </nav>
+
+            {{-- <nav class="p-6 flex justify-center">
                 <ul class="flex items-center">
                     <li>
-                        <a href="" class="p-3 m-2 bg-white rounded">Home</a>
+                        <a href="/" class="p-3 m-2 bg-white rounded">Home</a>
                     </li>
                     <li>
-                        <a href="" class="p-3 m-2 bg-white rounded">Contacts</a>
+                        <a href="{{ route('contacts') }}" class="p-3 m-2 bg-white rounded">Contacts</a>
                     </li>
                     <li>
-                        <a href="" class="p-3 m-2 bg-white rounded">Add contact</a>
+                        <a href="{{ route('add_contact') }}" class="p-3 m-2 bg-white rounded">Add contact</a>
                     </li>
                     <li>
                         <a href="" class="p-3 m-2 bg-white rounded">Edit contact</a>
                     </li>
                 </ul>
-            </nav>
+            </nav> --}}
 
-            @yield('content')
+            <div class="bg-gray-400 rounded-b">
+                @yield('content')
+            </div>
         </div>
     </div>
     </body>
