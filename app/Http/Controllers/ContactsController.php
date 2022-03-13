@@ -9,14 +9,14 @@ class ContactsController extends Controller
 {
     public function index()
     {
-        $contacts = Contact::orderBy('name', 'asc')->paginate(5);
+        $contacts = Contact::orderBy('name', 'asc')->simplePaginate(5);
 
         return view('contacts.index', [
             'contacts' => $contacts,
         ]);
     }
 
-    public function add()
+    public function add_form()
     {
         return view('add_contact');
     }
@@ -42,5 +42,12 @@ class ContactsController extends Controller
         ]);
 
         return redirect()->route('contacts');
+    }
+
+    public function destroy(Contact $contact)
+    {
+        $contact->delete();
+
+        return back();
     }
 }

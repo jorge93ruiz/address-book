@@ -8,6 +8,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
+Route::delete('/contacts/{contact}', [ContactsController::class, 'destroy'])->name('contacts.destroy');
 
-Route::get('/add_contact', [ContactsController::class, 'add'])->name('add_contact');
+Route::get('/add_contact', [ContactsController::class, 'add_form'])->name('add_contact');
 Route::post('/add_contact', [ContactsController::class, 'store']);

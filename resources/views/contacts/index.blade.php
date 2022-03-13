@@ -12,9 +12,8 @@
             @foreach ($contacts as $contact)
                 <div class="bg-white rounded-lg p-6 mb-4">
                     <div class="flex justify-between items-center mb-2">
-                        {{-- name --}}
                         <p class="text-xl font-bold">{{ $contact->name }}</p>
-                        {{-- date o birth --}}
+
                         <p>
                             {{ $contact->date_of_birth->format('M, j') }} - 
                             <span class="text-gray-600 text-sm">
@@ -28,27 +27,31 @@
                             </span>
                         </p>
                     </div>
+
                     <div class="flex">
                         <span class="font-bold w-1/4">Address:</span><span class="w-3/4">{{ $contact->address }}</span>
                     </div>
+
                     <div class="flex">
                         <span class="font-bold w-1/4">Email:</span><span class="w-3/4">{{ $contact->email }}</span>
                     </div>
+
                     <div class="flex">
                         <span class="font-bold w-1/4">Phone:</span><span class="w-3/4">{{ $contact->phone_number }}</span>
                     </div>
 
-                    {{-- @can ('delete', $contact)
-                        <form action="{{ route('contacts.destroy', $contact) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="text-blue-500">Delete</button>
-                        </form>
-                    @endcan --}}
+                    {{-- delete button --}}
+                    <form action="{{ route('contacts.destroy', $contact) }}" method="post" class="text-right">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Delete</button>
+                    </form>
                 </div>
             @endforeach
 
-            {{ $contacts->links() }}
+            <div>
+                {{ $contacts->links() }}
+            </div>
 
         @else
             <div class="bg-white rounded-lg p-6 mb-4">

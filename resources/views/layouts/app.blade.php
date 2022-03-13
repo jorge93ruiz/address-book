@@ -24,23 +24,6 @@
                 </div>
             </nav>
 
-            {{-- <nav class="p-6 flex justify-center">
-                <ul class="flex items-center">
-                    <li>
-                        <a href="/" class="p-3 m-2 bg-white rounded">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('contacts') }}" class="p-3 m-2 bg-white rounded">Contacts</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('add_contact') }}" class="p-3 m-2 bg-white rounded">Add contact</a>
-                    </li>
-                    <li>
-                        <a href="" class="p-3 m-2 bg-white rounded">Edit contact</a>
-                    </li>
-                </ul>
-            </nav> --}}
-
             <div class="bg-gray-400 rounded-b">
                 @yield('content')
             </div>
